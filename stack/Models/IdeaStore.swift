@@ -8,6 +8,8 @@
 import Foundation
 
 class IdeaStore: ObservableObject {
+    static let shared = IdeaStore()
+    
     @Published var ideas: [Idea] = []
     
     private let userDefaults = UserDefaults.standard

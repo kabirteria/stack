@@ -9,13 +9,19 @@ import SwiftUI
 
 @main
 struct stackApp: App {
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @StateObject private var ideaStore = IdeaStore.shared
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(ideaStore)
                 .background(Color.black)
+                .frame(minWidth: 600, minHeight: 700)
         }
         .windowResizability(.contentSize)
         .windowStyle(.hiddenTitleBar)
         .windowBackgroundDragBehavior(.enabled)
+        .defaultSize(width: 600, height: 700)
     }
 }

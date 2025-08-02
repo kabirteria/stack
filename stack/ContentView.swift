@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var ideaStore = IdeaStore()
+    @EnvironmentObject private var ideaStore: IdeaStore
     @State private var newIdeaText = ""
     @State private var showCategoryDropdown = false
     @State private var selectedCategoryIndex = 0

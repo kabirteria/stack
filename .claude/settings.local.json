@@ -1,9 +1,16 @@
 {
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
   "permissions": {
     "allow": [
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git push:*)",
+      "Bash(xcodebuild:*)",
+      "Bash(open:*)",
+      "Bash(pkill:*)",
+      "Bash(\"/Users/kabirteria/Library/Developer/Xcode/DerivedData/stack-atyavolmibidebayruxyzyfdfajt/Build/Products/Debug/stack.app/Contents/MacOS/stack\")",
+      "Bash(swift build)",
+      "Bash(swiftc:*)"
     ],
     "deny": []
-  },
-  "$schema": "https://json.schemastore.org/claude-code-settings.json"
+  }
 }
