@@ -17,11 +17,8 @@ struct stackApp: App {
             ContentView()
                 .environmentObject(ideaStore)
                 .background(Color.black)
-                .frame(minWidth: 250, minHeight: 350)
+                .frame(minWidth: 250, idealWidth: 500, minHeight: 350, idealHeight: 700)
         }
-        .windowResizability(.contentSize)
         .windowStyle(.hiddenTitleBar)
-        .windowBackgroundDragBehavior(.enabled)
-        .defaultSize(width: 500, height: 700)
     }
 }

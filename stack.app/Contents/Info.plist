@@ -6,6 +6,8 @@
 	<string>24C101</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>stack app</string>
 	<key>CFBundleExecutable</key>
 	<string>stack</string>
 	<key>CFBundleIconFile</key>
@@ -47,6 +49,6 @@
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.productivity</string>
 	<key>LSMinimumSystemVersion</key>
-	<string>15.2</string>
+	<string>14.0</string>
 </dict>
 </plist>

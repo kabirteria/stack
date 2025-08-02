@@ -30,57 +30,56 @@ struct OverlayView: View {
     }
     
     var body: some View {
-        VStack(spacing: 0) {
-            // Main content
-            VStack(spacing: 16) {
-                // Text field
-                TextField("", text: $ideaText)
-                    .textFieldStyle(PlainTextFieldStyle())
-                    .font(.system(size: 16, weight: .regular, design: .default))
-                    .foregroundColor(.white)
-                    .focused($isTextFieldFocused)
-                    .onSubmit {
-                        handleSave()
-                    }
-                    .overlay(
-                        // Custom placeholder
-                        Group {
-                            if ideaText.isEmpty {
-                                HStack {
-                                    Text("what's the idea?")
-                                        .foregroundColor(.white.opacity(0.5))
-                                        .font(.system(size: 16, weight: .regular, design: .default))
-                                    Spacer()
-                                }
-                            }
-                        }
-                    )
-                    .padding(.horizontal, 24)
-                    .padding(.vertical, 16)
-                    .background(
-                        RoundedRectangle(cornerRadius: 2)
-                            .fill(Color.white.opacity(0.2))
-                            .stroke(isTextFieldFocused ? Color.white.opacity(0.6) : Color.white.opacity(0.4), lineWidth: 1)
-                    )
-                
-                // Hint text
-                Text("press enter to save • esc to cancel • option+s to toggle")
-                    .font(.system(size: 11, weight: .regular, design: .default))
-                    .foregroundColor(.white.opacity(0.4))
-            }
-            .padding(30)
+        VStack(spacing: 16) {
+            textFieldView
+            hintTextView
         }
+        .padding(30)
         .frame(minWidth: 550, minHeight: 120)
-        .background(
-            RoundedRectangle(cornerRadius: 3)
-                .fill(Color.black.opacity(0.98))
-                .shadow(color: .black.opacity(0.4), radius: 25, x: 0, y: 12)
-        )
+        .background(backgroundView)
         .onAppear {
-            // Auto-focus when view appears
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
                 isTextFieldFocused = true
             }
         }
+    }
+    
+    private var textFieldView: some View {
+        TextField("what's the idea?", text: $ideaText)
+            .textFieldStyle(PlainTextFieldStyle())
+            .font(.system(size: 16, weight: .regular))
+            .foregroundColor(.white)
+            .focused($isTextFieldFocused)
+            .onSubmit {
+                handleSave()
+            }
+            .padding(.horizontal, 24)
+            .padding(.vertical, 16)
+            .background(textFieldBackground)
+    }
+    
+    private var textFieldBackground: some View {
+        RoundedRectangle(cornerRadius: 2)
+            .foregroundColor(Color.white.opacity(0.2))
+            .overlay(
+                RoundedRectangle(cornerRadius: 2)
+                    .stroke(strokeColor, lineWidth: 1)
+            )
+    }
+    
+    private var strokeColor: Color {
+        isTextFieldFocused ? Color.white.opacity(0.6) : Color.white.opacity(0.4)
+    }
+    
+    private var hintTextView: some View {
+        Text("press enter to save • esc to cancel • option+s to toggle")
+            .font(.system(size: 11, weight: .regular))
+            .foregroundColor(.white.opacity(0.4))
+    }
+    
+    private var backgroundView: some View {
+        RoundedRectangle(cornerRadius: 3)
+            .foregroundColor(Color.black.opacity(0.98))
+            .shadow(color: .black.opacity(0.4), radius: 25, x: 0, y: 12)
     }
 }

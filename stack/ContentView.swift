@@ -62,24 +62,6 @@ struct ContentView: View {
         }
         .background(backgroundColor)
         .preferredColorScheme(isDarkMode ? .dark : .light)
-        .onKeyPress(.upArrow) {
-            if showCategoryDropdown && !filteredCategories.isEmpty {
-                selectedCategoryIndex = max(0, selectedCategoryIndex - 1)
-                return .handled
-            }
-            return .ignored
-        }
-        .onKeyPress(.downArrow) {
-            if showCategoryDropdown && !filteredCategories.isEmpty {
-                selectedCategoryIndex = min(filteredCategories.count - 1, selectedCategoryIndex + 1)
-                return .handled
-            }
-            return .ignored
-        }
-        .onKeyPress(.escape) {
-            showCategoryDropdown = false
-            return .handled
-        }
         .onTapGesture {
             showCategoryDropdown = false
         }

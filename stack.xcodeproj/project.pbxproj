@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BCD3A6FE2E3D713600BE77A3 /* CLAUDE.md in Resources */ = {isa = PBXBuildFile; fileRef = BCD3A6FD2E3D713600BE77A3 /* CLAUDE.md */; };
+		BCD3A7122E3DA29B00BE77A3 /* stack.app in Resources */ = {isa = PBXBuildFile; fileRef = BCD3A7112E3DA29B00BE77A3 /* stack.app */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +33,7 @@
 		BCD3A6E82E3D6AEB00BE77A3 /* stackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = stackUITests.xctest; path = "/Users/kabirteria/Desktop/swift projects/stack/build/Debug/stackUITests-Runner.app/Contents/PlugIns/stackUITests.xctest"; sourceTree = "<absolute>"; };
 		BCD3A6FD2E3D713600BE77A3 /* CLAUDE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CLAUDE.md; sourceTree = "<group>"; };
 		BCD3A7102E3D970500BE77A3 /* stack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stack.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCD3A7112E3DA29B00BE77A3 /* stack.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = stack.app; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -85,6 +87,7 @@
 				BCD3A6E12E3D6AEB00BE77A3 /* stackTests */,
 				BCD3A6EB2E3D6AEB00BE77A3 /* stackUITests */,
 				BCD3A7102E3D970500BE77A3 /* stack.app */,
+				BCD3A7112E3DA29B00BE77A3 /* stack.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -208,6 +211,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCD3A7122E3DA29B00BE77A3 /* stack.app in Resources */,
 				BCD3A6FE2E3D713600BE77A3 /* CLAUDE.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,12 +404,14 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "stack app";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kabirteria.stack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -431,12 +437,14 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "stack app";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kabirteria.stack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
